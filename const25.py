@@ -11,3 +11,18 @@ for x in arr1:
 
 print(arr)
 print(f'result: {sorted(result)}')
+
+
+# Упрощенная версия
+
+arr = []
+
+arr1 = [2**x for x in range(28)]
+arr2 = [3**x for x in range(25)]
+
+for x in arr1:
+    for y in arr2:
+        if 400_000_000 < x * y < 600_000_000:
+            arr.append(x * y)
+
+print(arr)
