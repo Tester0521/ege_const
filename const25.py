@@ -8,4 +8,5 @@ for x in arr1:
         if 400_000_000 < x * y < 600_000_000:
             arr.append(x * y)
 
-print(arr)
+for elem in arr:
+	print(elem)
