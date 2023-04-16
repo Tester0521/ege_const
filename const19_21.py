@@ -31,3 +31,38 @@ def rocks3(s, s2, h=1):
 for i in range(1, 100):
     if rocks3(i, 13):
         print(i)
+
+
+
+
+def rock(s1, s2=8, t=0):
+    if (s1 + s2) >= 50 and t == 2: return 1
+    elif (s1 + s2) < 50 and t == 2: return 0
+    elif (s1 + s2 ) >= 50 and t < 2: return 0
+    else:
+        if t % 2 != 0: return rock(s1 + 1, s2, t + 1) or rock(s1 * 2, s2, t + 1) or rock(s1, s2 + 1, t + 1) or rock(s1, s2*2, t + 1)
+        else: return rock(s1 + 1, s2, t + 1) or rock(s1 * 2, s2, t + 1) or rock(s1, s2 + 1, t + 1) or rock(s1, s2*2, t + 1)
+
+def rock2(s1, s2=8, t=0):
+    if (s1 + s2) >= 50 and t == 3: return 1
+    elif (s1 + s2) < 50 and t == 3: return 0
+    elif (s1 + s2 ) >= 50 and t < 3: return 0
+    else:
+        if t % 2 == 0: return rock2(s1 + 1, s2, t + 1) or rock2(s1 * 2, s2, t + 1) or rock2(s1, s2 + 1, t + 1) or rock2(s1, s2*2, t + 1)
+        else: return rock2(s1 + 1, s2, t + 1) and rock2(s1 * 2, s2, t + 1) and rock2(s1, s2 + 1, t + 1) and rock2(s1, s2*2, t + 1)
+
+def rock3(s1, s2=8, t=0):
+    if (s1 + s2) >= 50 and (t == 4 or t == 2): return 1
+    elif (s1 + s2) < 50 and t == 4: return 0
+    elif (s1 + s2 ) >= 50 and t < 4: return 0
+    else:
+        if t % 2 != 0: return rock3(s1 + 1, s2, t + 1) or rock3(s1 * 2, s2, t + 1) or rock3(s1, s2 + 1, t + 1) or rock3(s1, s2*2, t + 1)
+        else: return rock3(s1 + 1, s2, t + 1) and rock3(s1 * 2, s2, t + 1) and rock3(s1, s2 + 1, t + 1) and rock3(s1, s2*2, t + 1)
+
+def rock31(s1, s2=8, t=0):
+    if (s1 + s2) >= 50 and t == 2: return 1
+    elif (s1 + s2) < 50 and t == 2: return 0
+    elif (s1 + s2 ) >= 50 and t < 2: return 0
+    else:
+        if t % 2 != 0: return rock31(s1 + 1, s2, t + 1) or rock31(s1 * 2, s2, t + 1) or rock31(s1, s2 + 1, t + 1) or rock31(s1, s2*2, t + 1)
+        else: return rock31(s1 + 1, s2, t + 1) or rock31(s1 * 2, s2, t + 1) or rock31(s1, s2 + 1, t + 1) or rock31(s1, s2*2, t + 1)
